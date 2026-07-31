@@ -801,8 +801,8 @@ a { text-decoration: none; color: inherit; }
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(37,99,176,.08);
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .5s ease, transform .5s ease;
+  transform: translateY(20px);
+  transition: opacity .35s ease, transform .35s ease;
 }
 
 .rules-block.visible {
@@ -938,8 +938,8 @@ a { text-decoration: none; color: inherit; }
    ============================================ */
 .fade-up {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity .6s ease, transform .6s ease;
+  transform: translateY(20px);
+  transition: opacity .35s ease, transform .35s ease;
 }
 
 .fade-up.visible {
