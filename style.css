@@ -1048,7 +1048,7 @@ a { text-decoration: none; color: inherit; }
    ========================================= */
 
 .contact-hero {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%) !important;
+  background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 100%) !important;
 }
 
 .contact-section {
@@ -1233,21 +1233,22 @@ a { text-decoration: none; color: inherit; }
 }
 
 .em-copy-btn {
-  background: rgba(37,99,176,0.08);
-  border: 1px solid rgba(37,99,176,0.2);
-  border-radius: 6px;
-  padding: 5px 7px;
+  background: none;
+  border: none;
+  padding: 4px;
   cursor: pointer;
-  color: var(--primary);
+  color: #94a3b8;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
+  transition: color 0.2s ease;
   line-height: 0;
+  opacity: 0.6;
 }
 
 .em-copy-btn:hover {
-  background: rgba(37,99,176,0.18);
+  color: #1a3a6e;
+  opacity: 1;
 }
 
 .em-info {
