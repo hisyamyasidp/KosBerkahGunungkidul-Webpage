@@ -106,6 +106,16 @@ function copyTextToClipboard(text) {
   });
 }
 
+function copyWithFeedback(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    showToast("Berhasil disalin!");
+    setTimeout(() => btn.classList.remove('copied'), 2000);
+  }).catch(() => {
+    showToast("Gagal menyalin.");
+  });
+}
+
 function showToast(message) {
   const toast = document.getElementById("toast");
   if (!toast) return;
