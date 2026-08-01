@@ -454,9 +454,12 @@ a { text-decoration: none; color: inherit; }
   aspect-ratio: 16/7;
 }
 
+.gallery-item.main-item img {
+  object-position: center 80%;
+}
+
 .gallery-item img {
   height: 100%;
-  object-position: center 80%;
   transition: transform .5s ease;
 }
 
