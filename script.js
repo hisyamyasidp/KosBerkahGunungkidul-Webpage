@@ -16,6 +16,7 @@ function showPage(pageName) {
   document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
   if (pageName === 'home')  document.getElementById('navHome').classList.add('active');
   if (pageName === 'rules') document.getElementById('navRules').classList.add('active');
+  if (pageName === 'contact') document.getElementById('navContact').classList.add('active');
 
   document.getElementById('navLinks').classList.remove('open');
   document.getElementById('navToggle').classList.remove('active');
@@ -94,3 +95,23 @@ function observeElements(root) {
 document.addEventListener('DOMContentLoaded', () => {
   observeElements(document.getElementById('page-home'));
 });
+
+// --- Copy to Clipboard ---
+function copyTextToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    showToast("Teks berhasil disalin!");
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+    showToast("Gagal menyalin teks.");
+  });
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.innerText = message;
+  toast.className = "toast show";
+  setTimeout(() => {
+    toast.className = toast.className.replace("show", "");
+  }, 3000);
+}
