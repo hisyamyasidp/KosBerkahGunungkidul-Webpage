@@ -16,6 +16,7 @@ function showPage(pageName) {
   document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
   if (pageName === 'home')  document.getElementById('navHome').classList.add('active');
   if (pageName === 'rules') document.getElementById('navRules').classList.add('active');
+  if (pageName === 'wifi')  document.getElementById('navWifi').classList.add('active');
   if (pageName === 'contact') document.getElementById('navContact').classList.add('active');
 
   document.getElementById('navLinks').classList.remove('open');
@@ -94,6 +95,14 @@ function observeElements(root) {
 // Init on load
 document.addEventListener('DOMContentLoaded', () => {
   observeElements(document.getElementById('page-home'));
+  
+  // Load WiFi config
+  if (typeof WIFI_SSID !== 'undefined' && typeof WIFI_PASSWORD !== 'undefined') {
+    const ssidEl = document.getElementById('ui-wifi-ssid');
+    const passEl = document.getElementById('ui-wifi-password');
+    if (ssidEl) ssidEl.innerText = WIFI_SSID;
+    if (passEl) passEl.innerText = WIFI_PASSWORD;
+  }
 });
 
 // --- Copy to Clipboard ---

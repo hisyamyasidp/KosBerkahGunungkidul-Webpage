@@ -11,6 +11,7 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <link rel="stylesheet" href="style.css" />
+  <script src="wifi-config.js"></script>
 </head>
 <body>
 
@@ -24,6 +25,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#" class="nav-link active" id="navHome" onclick="showPage('home')">Beranda</a>
         <a href="#" class="nav-link" id="navRules" onclick="showPage('rules')">Tata Tertib</a>
+        <a href="#" class="nav-link" id="navWifi" onclick="showPage('wifi')">Fasilitas WiFi</a>
         <a href="#" class="nav-link" id="navContact" onclick="showPage('contact')">Info & Kontak</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -621,6 +623,74 @@
       </div>
     </footer>
   </div><!-- end page-contact -->
+
+  <!-- ============================== -->
+  <!-- PAGE 4: FASILITAS WIFI         -->
+  <!-- ============================== -->
+  <div id="page-wifi" class="page">
+    <section class="rules-hero contact-hero">
+      <div class="rules-hero-content">
+        <div class="rules-hero-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+        </div>
+        <h1>Fasilitas WiFi</h1>
+        <p>Kos Berkah Gunungkidul</p>
+        <div class="rules-hero-desc">
+          Informasi akses jaringan WiFi gratis khusus untuk penghuni kos.
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-container">
+        <div class="contact-quick-grid">
+          
+          <div class="quick-card qc-blue">
+            <div class="qc-top">
+              <div class="qc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+              </div>
+              <div class="qc-label">Nama WiFi (SSID)</div>
+            </div>
+            <div class="qc-value" id="ui-wifi-ssid">Memuat...</div>
+            <button class="qc-copy-btn" onclick="copyWithFeedback(this, document.getElementById('ui-wifi-ssid').innerText)" title="Salin Nama WiFi">
+              <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </button>
+          </div>
+          
+          <div class="quick-card qc-teal">
+            <div class="qc-top">
+              <div class="qc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </div>
+              <div class="qc-label">Password WiFi</div>
+            </div>
+            <div class="qc-value" id="ui-wifi-password">Memuat...</div>
+            <button class="qc-copy-btn" onclick="copyWithFeedback(this, document.getElementById('ui-wifi-password').innerText)" title="Salin Password">
+              <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="logo.jpg" alt="Logo Kos Berkah" class="footer-logo" />
+            <span>Kos Berkah Gunungkidul</span>
+          </div>
+          <p class="footer-tagline">Hunian nyaman, hati tenang</p>
+          <p class="footer-copy">&copy; 2026 Kos Berkah Gunungkidul. All Right Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div><!-- end page-wifi -->
 
   <div id="toast" class="toast">Berhasil disalin!</div>
 
